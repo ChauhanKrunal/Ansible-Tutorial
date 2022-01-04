@@ -1,0 +1,16 @@
+- 
+  name: Play 3
+  hosts: webserver1
+  vars:
+    names:
+        - name: Krunal
+          srname: Chauhan
+        - name: Het
+          srname: Thakkar
+        - name: Yogi
+          srname: Chaudhary
+  tasks:
+    - name: Echo Command in loop
+      command: echo Hey My Name is "{{ item.name }} and srname is {{ item.srname }}"
+      with_items: "{{ names }}"
+        

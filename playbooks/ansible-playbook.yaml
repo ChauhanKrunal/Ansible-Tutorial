@@ -1,0 +1,18 @@
+# Command to run ansible playbook with custom inventory file
+# ansible-playbook -i <your_ansible_inventory.txt> <your_ansible-playbook.yaml>
+-
+  name: Play 1
+  hosts: webserver1
+  tasks: 
+  - name: Execute command date
+    command: date
+
+  - name: Install httpd service
+    yum: 
+      name: httpd
+      state: present
+  
+  - name: Start httpd service
+    service: 
+      name: httpd
+      state: started

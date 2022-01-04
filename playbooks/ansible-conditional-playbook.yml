@@ -1,0 +1,14 @@
+- 
+  name: Play 4
+  hosts: webserver1
+  vars:
+      - age: 25
+  tasks:
+    - 
+      command: echo I am a teenager
+      when: "age<18"
+
+    - 
+      command: echo I am adult
+      when: "age>18"
+        
